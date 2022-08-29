@@ -3,7 +3,9 @@ package com.back.carreras.controller;
 
 
 import com.back.carreras.model.Categorias;
+import com.back.carreras.model.Sponsors;
 import com.back.carreras.service.ICategoriasService;
+import com.back.carreras.service.ISponsorsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,5 +50,36 @@ public class Controller {
   //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public void modificarCategorias(@RequestBody Categorias cat){
         cateServ.modifCategorias(cat);    }
+    
+     @Autowired
+      ISponsorsService sponServ;
+    @PostMapping ("/sponsors")
+    @CrossOrigin(origins="http://localhost:4200")
+  //  @CrossOrigin(origins ="https://cvpatriciarivas")
+    public void agregarSponsors(@RequestBody Sponsors spon){
+     //   listaCategorias.add(cat);
+     sponServ.crearSponsors(spon);
+    }
+    
+    @GetMapping ("/ver/sponsors")
+    @ResponseBody
+  @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
+    public List <Sponsors> verSponsors(){
+     //   return listaCategorias;
+    
+     return sponServ.verSponsors();
+    }
+    @DeleteMapping ("/delete/sponsors/{id}")
+    @CrossOrigin(origins="http://localhost:4200")
+    public void borrarSponsors(@PathVariable Long id){
+        sponServ.borrarSponsors(id);
+    }
+    
+    @PutMapping("/modif/sponsors")
+    @CrossOrigin(origins="http://localhost:4200")
+  //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
+    public void modificarSponsors(@RequestBody Sponsors spon){
+        sponServ.modifSponsors(spon);    }
     
 }
