@@ -1,6 +1,7 @@
 
 package com.back.carreras.service;
 
+
 import com.back.carreras.model.Categorias;
 import com.back.carreras.repository.CategoriasRepository;
 import java.util.List;
@@ -37,5 +38,7 @@ public class CategoriasService implements ICategoriasService{
     public void modifCategorias(Categorias cat) {
         catRepo.save(cat);
     }
+
+   
     
 }

@@ -16,6 +16,7 @@ public class Categorias implements  Serializable{
      @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String idCategoria;
     private String nombreCategoria;
     private float ponderadorCategoria;
     private String linkCategoria;
@@ -23,12 +24,15 @@ public class Categorias implements  Serializable{
     public Categorias() {
     }
 
-    public Categorias(Long id, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
+    public Categorias(Long id, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
         this.id = id;
+        this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.ponderadorCategoria = ponderadorCategoria;
         this.linkCategoria = linkCategoria;
     }
+
+   
 
    
     
