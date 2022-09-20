@@ -15,16 +15,23 @@ public class Sponsors implements  Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String logoSponsor;
+    private String nombreSponsor; 
     private String linkSponsor;
     private String espacioSponsor;
+    private String logoSponsor;
 
-    public Sponsors(Long id, String logoSponsor, String linkSponsor, String espacioSponsor) {
+    public Sponsors(Long id, String nombreSponsor, String linkSponsor, String espacioSponsor, String logoSponsor) {
         this.id = id;
-        this.logoSponsor = logoSponsor;
+        this.nombreSponsor = nombreSponsor;
         this.linkSponsor = linkSponsor;
         this.espacioSponsor = espacioSponsor;
+        this.logoSponsor = logoSponsor;
     }
+    
+   
+    
+    
+ 
 
     public Sponsors() {
     }

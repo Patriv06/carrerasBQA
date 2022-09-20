@@ -9,10 +9,12 @@ import com.back.carreras.model.Noticias;
 import com.back.carreras.model.Sponsors;
 
 
+
 import com.back.carreras.service.IAutodromoService;
 import com.back.carreras.service.ICategoriasService;
 import com.back.carreras.service.INoticiasService;
 import com.back.carreras.service.ISponsorsService;
+
 
 
 
@@ -93,7 +95,6 @@ public class Controller {
     
     @PutMapping("/modif/sponsors")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public void modificarSponsors(@RequestBody Sponsors spon){
         sponServ.modifSponsors(spon);    }
     
