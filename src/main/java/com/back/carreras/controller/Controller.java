@@ -38,8 +38,8 @@ public class Controller {
     @Autowired
       ICategoriasService cateServ;
     @PostMapping ("/categorias")
-    @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarCategorias(@RequestBody Categorias cat){
      //   listaCategorias.add(cat);
      cateServ.crearCategorias(cat);
@@ -47,22 +47,24 @@ public class Controller {
     
     @GetMapping ("/ver/categorias")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
-    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    
     public List <Categorias> verCategorias(){
      //   return listaCategorias;
     
      return cateServ.verCategorias();
     }
     @DeleteMapping ("/delete/categorias/{id}")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void borrarCategorias(@PathVariable Long id){
         cateServ.borrarCategorias(id);
     }
     
     @PutMapping("/modif/categorias")
-    @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
+  // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarCategorias(@RequestBody Categorias cat){
         cateServ.modifCategorias(cat);    }
     
@@ -81,7 +83,6 @@ public class Controller {
     @GetMapping ("/ver/sponsors")
     @ResponseBody
   @CrossOrigin(origins="http://localhost:4200")
-    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public List <Sponsors> verSponsors(){
      //   return listaCategorias;
     
@@ -103,7 +104,6 @@ public class Controller {
       INoticiasService notServ;
     @PostMapping ("/noticias")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas")
     public void agregarNoticias (@RequestBody Noticias not){
      //   listaCategorias.add(cat);
      notServ.crearNoticias(not);
@@ -112,7 +112,6 @@ public class Controller {
     @GetMapping ("/ver/noticias")
     @ResponseBody
   @CrossOrigin(origins="http://localhost:4200")
-    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public List <Noticias> verNoticias(){
     
     
@@ -126,14 +125,12 @@ public class Controller {
     
     @PutMapping("/modif/noticias")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public void modificarNoticias(@RequestBody Noticias not){
         notServ.modifNoticias(not); }
     
     @GetMapping ("/ver/noticiasOrdenadas")
     @ResponseBody
   @CrossOrigin(origins="http://localhost:4200")
-    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public List <Noticias> verNoticiasOrdenadas(){
         return notServ.verNoticiasOrdenadas();
     }
@@ -143,7 +140,6 @@ public class Controller {
       IAutodromoService autServ;
     @PostMapping ("/autodromos")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas")
     public void agregarAutodromos (@RequestBody Autodromo aut){
      //   listaCategorias.add(cat);
      autServ.crearAutodromo(aut);
@@ -152,7 +148,7 @@ public class Controller {
     @GetMapping ("/ver/autodromos")
     @ResponseBody
   @CrossOrigin(origins="http://localhost:4200")
-    //@CrossOrigin(origins ="https://cvpatriciarivas.web.app")
+    
     public List <Autodromo> verAutodromos(){
     
     
@@ -166,7 +162,6 @@ public class Controller {
     
     @PutMapping("/modif/autodromos")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas.web.app")
     public void modificarAutodromo(@RequestBody Autodromo aut){
         autServ.modifAutodromo(aut); }
     
