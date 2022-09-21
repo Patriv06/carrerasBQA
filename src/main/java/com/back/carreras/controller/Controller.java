@@ -75,8 +75,8 @@ public class Controller {
      @Autowired
       ISponsorsService sponServ;
     @PostMapping ("/sponsors")
-    @CrossOrigin(origins="http://localhost:4200")
-   // @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarSponsors(@RequestBody Sponsors spon){
      //   listaCategorias.add(cat);
      sponServ.crearSponsors(spon);
@@ -84,20 +84,23 @@ public class Controller {
     
     @GetMapping ("/ver/sponsors")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Sponsors> verSponsors(){
      //   return listaCategorias;
     
      return sponServ.verSponsors();
     }
     @DeleteMapping ("/delete/sponsors/{id}")
-    @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void borrarSponsors(@PathVariable Long id){
         sponServ.borrarSponsors(id);
     }
     
     @PutMapping("/modif/sponsors")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarSponsors(@RequestBody Sponsors spon){
         sponServ.modifSponsors(spon);    }
     
@@ -105,7 +108,8 @@ public class Controller {
      @Autowired
       INoticiasService notServ;
     @PostMapping ("/noticias")
-    @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarNoticias (@RequestBody Noticias not){
      //   listaCategorias.add(cat);
      notServ.crearNoticias(not);
@@ -113,26 +117,29 @@ public class Controller {
     
     @GetMapping ("/ver/noticias")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Noticias> verNoticias(){
     
     
      return notServ.verNoticias();
     }
     @DeleteMapping ("/delete/noticias/{id}")
-    @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
     public void borrarNoticias(@PathVariable Long id){
         notServ.borrarNoticias(id);
     }
     
     @PutMapping("/modif/noticias")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarNoticias(@RequestBody Noticias not){
         notServ.modifNoticias(not); }
     
     @GetMapping ("/ver/noticiasOrdenadas")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+ // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Noticias> verNoticiasOrdenadas(){
         return notServ.verNoticiasOrdenadas();
     }
@@ -141,7 +148,8 @@ public class Controller {
      @Autowired
       IAutodromoService autServ;
     @PostMapping ("/autodromos")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarAutodromos (@RequestBody Autodromo aut){
      //   listaCategorias.add(cat);
      autServ.crearAutodromo(aut);
@@ -149,21 +157,23 @@ public class Controller {
     
     @GetMapping ("/ver/autodromos")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
-    
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Autodromo> verAutodromos(){
     
     
      return autServ.verAutodromo();
     }
     @DeleteMapping ("/delete/autodromos/{id}")
-    @CrossOrigin(origins="http://localhost:4200")
+   //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void borrarAutodromo(@PathVariable Long id){
         autServ.borrarAutodromo(id);
     }
     
     @PutMapping("/modif/autodromos")
-    @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarAutodromo(@RequestBody Autodromo aut){
         autServ.modifAutodromo(aut); }
     
@@ -171,7 +181,8 @@ public class Controller {
      @Autowired
       IPilotosService pilotServ;
     @PostMapping ("/pilotos")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarPilotos (@RequestBody Pilotos pil){
      //   listaCategorias.add(cat);
      pilotServ.crearPilotos(pil);
@@ -179,32 +190,37 @@ public class Controller {
     
     @GetMapping ("/ver/pilotos")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Pilotos> verPilotos(){
     
     
      return pilotServ.verPilotos();
     }
     @DeleteMapping ("/delete/pilotos/{id}")
-    @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void borrarPilotos(@PathVariable Long id){
         pilotServ.borrarPilotos(id);
     }
     
     @PutMapping("/modif/pilotos")
-    @CrossOrigin(origins="http://localhost:4200")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarPilotos(@RequestBody Pilotos pil){
         pilotServ.modifPilotos(pil); }
     
     @GetMapping ("/ver/pilOrdenPunAnt")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+ // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Pilotos> verPilotosOrdenPuntAnt(){
         return pilotServ.verPilotosPuntAntOrdenado();
     }
     @GetMapping ("/ver/pilOrdenPunAct")
     @ResponseBody
-  @CrossOrigin(origins="http://localhost:4200")
+//  @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public List <Pilotos> verPilotosOrdenPuntAct(){
         return pilotServ.verPilotosPuntActOrdenado();
     }
