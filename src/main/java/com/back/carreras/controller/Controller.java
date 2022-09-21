@@ -6,6 +6,7 @@ package com.back.carreras.controller;
 import com.back.carreras.model.Autodromo;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
+import com.back.carreras.model.Pilotos;
 import com.back.carreras.model.Sponsors;
 
 
@@ -13,6 +14,7 @@ import com.back.carreras.model.Sponsors;
 import com.back.carreras.service.IAutodromoService;
 import com.back.carreras.service.ICategoriasService;
 import com.back.carreras.service.INoticiasService;
+import com.back.carreras.service.IPilotosService;
 import com.back.carreras.service.ISponsorsService;
 
 
@@ -38,7 +40,7 @@ public class Controller {
     @Autowired
       ICategoriasService cateServ;
     @PostMapping ("/categorias")
-   // @CrossOrigin(origins="http://localhost:4200")
+    //@CrossOrigin(origins="http://localhost:4200")
     @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarCategorias(@RequestBody Categorias cat){
      //   listaCategorias.add(cat);
@@ -56,14 +58,14 @@ public class Controller {
      return cateServ.verCategorias();
     }
     @DeleteMapping ("/delete/categorias/{id}")
-   // @CrossOrigin(origins="http://localhost:4200")
+  // @CrossOrigin(origins="http://localhost:4200")
     @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void borrarCategorias(@PathVariable Long id){
         cateServ.borrarCategorias(id);
     }
     
     @PutMapping("/modif/categorias")
-  // @CrossOrigin(origins="http://localhost:4200")
+   //@CrossOrigin(origins="http://localhost:4200")
     @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarCategorias(@RequestBody Categorias cat){
         cateServ.modifCategorias(cat);    }
@@ -74,7 +76,7 @@ public class Controller {
       ISponsorsService sponServ;
     @PostMapping ("/sponsors")
     @CrossOrigin(origins="http://localhost:4200")
-  //  @CrossOrigin(origins ="https://cvpatriciarivas")
+   // @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void agregarSponsors(@RequestBody Sponsors spon){
      //   listaCategorias.add(cat);
      sponServ.crearSponsors(spon);
@@ -165,5 +167,45 @@ public class Controller {
     public void modificarAutodromo(@RequestBody Autodromo aut){
         autServ.modifAutodromo(aut); }
     
+     //PILOTOS  
+     @Autowired
+      IPilotosService pilotServ;
+    @PostMapping ("/pilotos")
+    @CrossOrigin(origins="http://localhost:4200")
+    public void agregarPilotos (@RequestBody Pilotos pil){
+     //   listaCategorias.add(cat);
+     pilotServ.crearPilotos(pil);
+    }
     
+    @GetMapping ("/ver/pilotos")
+    @ResponseBody
+  @CrossOrigin(origins="http://localhost:4200")
+    public List <Pilotos> verPilotos(){
+    
+    
+     return pilotServ.verPilotos();
+    }
+    @DeleteMapping ("/delete/pilotos/{id}")
+    @CrossOrigin(origins="http://localhost:4200")
+    public void borrarPilotos(@PathVariable Long id){
+        pilotServ.borrarPilotos(id);
+    }
+    
+    @PutMapping("/modif/pilotos")
+    @CrossOrigin(origins="http://localhost:4200")
+    public void modificarPilotos(@RequestBody Pilotos pil){
+        pilotServ.modifPilotos(pil); }
+    
+    @GetMapping ("/ver/pilOrdenPunAnt")
+    @ResponseBody
+  @CrossOrigin(origins="http://localhost:4200")
+    public List <Pilotos> verPilotosOrdenPuntAnt(){
+        return pilotServ.verPilotosPuntAntOrdenado();
+    }
+    @GetMapping ("/ver/pilOrdenPunAct")
+    @ResponseBody
+  @CrossOrigin(origins="http://localhost:4200")
+    public List <Pilotos> verPilotosOrdenPuntAct(){
+        return pilotServ.verPilotosPuntActOrdenado();
+    }
 }
