@@ -4,6 +4,7 @@ package com.back.carreras.controller;
 
 
 import com.back.carreras.model.Autodromo;
+import com.back.carreras.model.Carreras;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
 import com.back.carreras.model.Pilotos;
@@ -12,6 +13,7 @@ import com.back.carreras.model.Sponsors;
 
 
 import com.back.carreras.service.IAutodromoService;
+import com.back.carreras.service.ICarrerasService;
 import com.back.carreras.service.ICategoriasService;
 import com.back.carreras.service.INoticiasService;
 import com.back.carreras.service.IPilotosService;
@@ -224,4 +226,46 @@ public class Controller {
     public List <Pilotos> verPilotosOrdenPuntAct(){
         return pilotServ.verPilotosPuntActOrdenado();
     }
+    
+        //carreras
+     @Autowired
+      ICarrerasService carServ;
+    @PostMapping ("/carreras")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void agregarCarreras (@RequestBody Carreras car){
+     //   listaCategorias.add(cat);
+     carServ.crearCarreras(car);
+    }
+    
+    @GetMapping ("/ver/carreras")
+    @ResponseBody
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public List <Carreras> verCarreras(){
+    
+    
+     return carServ.verCarreras();
+    }
+    @DeleteMapping ("/delete/carreras/{id}")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void borrarCarreras(@PathVariable Long id){
+        carServ.borrarCarreras(id);
+    }
+    
+    @PutMapping("/modif/carreras")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void modificarPCarreras(@RequestBody Carreras car){
+        carServ.modifCarreras(car); }
+    
+    @GetMapping ("/ver/carFechaCarrera")
+    @ResponseBody
+ // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public List <Carreras> verFechaCarrera(){
+        return carServ.verCarrerasOrdenadas();
+    }
+   
 }
