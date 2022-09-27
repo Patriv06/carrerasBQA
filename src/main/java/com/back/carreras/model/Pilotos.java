@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,11 +27,7 @@ public class Pilotos implements Serializable{
     private String urlImgPiloto;
     private float puntajeAntPiloto;
     private float puntajeActPiloto;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "CarreraPiloto_Piloto",
-        joinColumns = @JoinColumn(name = "piloto_id", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "carreraPiloto_id", referencedColumnName = "id"))
-    private Set<CarreraPiloto> carreraPiloto;
+    
     
 
     public Pilotos() {
@@ -44,7 +40,7 @@ public class Pilotos implements Serializable{
         this.urlImgPiloto = urlImgPiloto;
         this.puntajeAntPiloto = puntajeAntPiloto;
         this.puntajeActPiloto = puntajeActPiloto;
-        this.carreraPiloto = carreraPiloto;
+     
     }
 
    

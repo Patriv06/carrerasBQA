@@ -29,9 +29,7 @@ public class Carreras implements Serializable {
     private int multiplCarrera;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaCarrera;
-    @OneToMany(mappedBy = "Carreras", cascade = CascadeType.ALL)
-    private Set<CarreraPiloto> carreraPiloto = new HashSet<>();
-
+  
     public Carreras() {
     }
 

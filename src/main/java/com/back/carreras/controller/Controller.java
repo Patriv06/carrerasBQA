@@ -5,6 +5,7 @@ package com.back.carreras.controller;
 
 import com.back.carreras.model.Autodromo;
 import com.back.carreras.model.CarreraPiloto;
+
 import com.back.carreras.model.Carreras;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
@@ -15,6 +16,10 @@ import com.back.carreras.model.Sponsors;
 
 import com.back.carreras.service.IAutodromoService;
 import com.back.carreras.service.ICarreraPilotoService;
+
+
+
+
 import com.back.carreras.service.ICarrerasService;
 import com.back.carreras.service.ICategoriasService;
 import com.back.carreras.service.INoticiasService;
@@ -269,10 +274,11 @@ public class Controller {
     public List <Carreras> verFechaCarrera(){
         return carServ.verCarrerasOrdenadas();
     }
-   
-        //carreraPiloto
-     @Autowired
+   //carreraPiloto
+    
+    @Autowired
       ICarreraPilotoService carPilServ;
+     
     @PostMapping ("/carreraPiloto")
    // @CrossOrigin(origins="http://localhost:4200")
     @CrossOrigin(origins="https://ranking-backoffice.web.app")
@@ -301,7 +307,11 @@ public class Controller {
    // @CrossOrigin(origins="http://localhost:4200")
     @CrossOrigin(origins="https://ranking-backoffice.web.app")
     public void modificarCarreraPiloto(@RequestBody CarreraPiloto carPil){
-        carPilServ.modifCarreraPiloto(carPil); }
+        carPilServ.modifCarreraPiloto(carPil);}
     
    
 }
+
+    
+    
+     
