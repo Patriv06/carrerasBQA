@@ -276,42 +276,4 @@ public class Controller {
     }
    //carreraPiloto
     
-    @Autowired
-      ICarreraPilotoService carPilServ;
-     
-    @PostMapping ("/carreraPiloto")
-   // @CrossOrigin(origins="http://localhost:4200")
-    @CrossOrigin(origins="https://ranking-backoffice.web.app")
-    public void agregarCarreraPiloto (@RequestBody CarreraPiloto carPil){
-     //   listaCategorias.add(cat);
-     carPilServ.crearCarreraPiloto(carPil);
-    }
-    
-    @GetMapping ("/ver/carreraPiloto")
-    @ResponseBody
-  //@CrossOrigin(origins="http://localhost:4200")
-    @CrossOrigin(origins="https://ranking-backoffice.web.app")
-    public List <CarreraPiloto> verCarreraPiloto(){
-    
-    
-     return carPilServ.verCarreraPiloto();
-    }
-    @DeleteMapping ("/delete/carreraPiloto/{id}")
-    //@CrossOrigin(origins="http://localhost:4200")
-    @CrossOrigin(origins="https://ranking-backoffice.web.app")
-    public void borrarCarreraPiloto(@PathVariable Long id){
-        carPilServ.borrarCarreraPiloto(id);
-    }
-    
-    @PutMapping("/modif/carreraPiloto")
-   // @CrossOrigin(origins="http://localhost:4200")
-    @CrossOrigin(origins="https://ranking-backoffice.web.app")
-    public void modificarCarreraPiloto(@RequestBody CarreraPiloto carPil){
-        carPilServ.modifCarreraPiloto(carPil);}
-    
-   
 }
-
-    
-    
-     
