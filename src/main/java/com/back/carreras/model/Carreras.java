@@ -3,10 +3,14 @@ package com.back.carreras.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +29,22 @@ public class Carreras implements Serializable {
     private int multiplCarrera;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaCarrera;
-    
+    @OneToMany(mappedBy = "Carreras", cascade = CascadeType.ALL)
+    private Set<CarreraPiloto> carreraPiloto = new HashSet<>();
+
+    public Carreras() {
+    }
+
+    public Carreras(Long id, String categoriaCarrera, String pilotoCarrera, String autodromoCarrera, String temporadaCarrera, String cantPilCarrera, int multiplCarrera, Date fechaCarrera) {
+        this.id = id;
+        this.categoriaCarrera = categoriaCarrera;
+        this.pilotoCarrera = pilotoCarrera;
+        this.autodromoCarrera = autodromoCarrera;
+        this.temporadaCarrera = temporadaCarrera;
+        this.cantPilCarrera = cantPilCarrera;
+        this.multiplCarrera = multiplCarrera;
+        this.fechaCarrera = fechaCarrera;
+    }
     
     
     
