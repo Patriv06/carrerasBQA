@@ -27,21 +27,23 @@ public class Categorias implements  Serializable{
     private float ponderadorCategoria;
     private String linkCategoria;
 
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "idCarreras")
-    private Set<Carreras> carreras = new HashSet<>();
 
-    
+
+    @OneToMany(mappedBy = "categorias", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Carreras> carreras;
     public Categorias() {
     }
 
-    public Categorias(Long id, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
+    public Categorias(Long id, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria, Set<Carreras> carreras) {
         this.id = id;
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.ponderadorCategoria = ponderadorCategoria;
         this.linkCategoria = linkCategoria;
+        this.carreras = carreras;
     }
+
+  
 
    
 

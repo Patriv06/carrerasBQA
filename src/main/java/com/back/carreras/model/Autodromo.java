@@ -22,18 +22,19 @@ public class Autodromo implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String  nombreAutodromo;
-@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "idCarreras")
-    private Set<Carreras> carreras = new HashSet<>();
-
+  @OneToMany(mappedBy = "autodromo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Carreras> carreras;
+    
     public Autodromo() {
     }
 
-    public Autodromo(Long id, String nombreAutodromo) {
+    public Autodromo(Long id, String nombreAutodromo, Set<Carreras> carreras) {
         this.id = id;
         this.nombreAutodromo = nombreAutodromo;
+        this.carreras = carreras;
     }
 
+   
     
 
 
