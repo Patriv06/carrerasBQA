@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.back.carreras.service;
+
 
 
 import com.back.carreras.model.Sponsors;
@@ -42,4 +40,6 @@ public class SponsorsService implements ISponsorsService {
     public void modifSponsors(Sponsors spon) {
          sponRepo.save(spon);
     }
+
+    
 }

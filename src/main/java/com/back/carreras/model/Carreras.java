@@ -31,11 +31,11 @@ public class Carreras implements Serializable {
     
 
   @ManyToOne
-  @JoinColumn(name= "Id")
+  @JoinColumn(name= "IdAutodromo")
   private Autodromo autodromo;
   
   @ManyToOne
-  @JoinColumn(name= "Id")
+  @JoinColumn(name= "IdCategoria")
   private Categorias categorias;
   
     public Carreras() {

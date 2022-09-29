@@ -25,11 +25,7 @@ public class CarreraPiloto implements Serializable {
     public CarreraPiloto() {
     }
 
-    public CarreraPiloto(Long id, int puestoCarreraPiloto, Carreras carreras) {
-        this.id = id;
-        this.puestoCarreraPiloto = puestoCarreraPiloto;
-        
-    }
+    
 
     
     

@@ -2,6 +2,7 @@
 package com.back.carreras.service;
 
 
+
 import com.back.carreras.model.Noticias;
 import java.util.List;
 
