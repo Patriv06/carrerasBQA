@@ -20,27 +20,33 @@ import lombok.Setter;
 public class Carreras implements Serializable {
      @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idCarreras;
     private String temporadaCarrera;
-    private String cantPilCarrera;
+    private int cantPilCarrera;
     private int multiplCarrera;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaCarrera;
     
 
   @ManyToOne
-  @JoinColumn(name= "IdAutodromo")
+  @JoinColumn(name= "idAutodromo")
   private Autodromo autodromo;
   
   @ManyToOne
-  @JoinColumn(name= "IdCategoria")
+  @JoinColumn(name= "idCat")
   private Categorias categorias;
+  
+  public void agregarAutodromo(Autodromo autodromo){
+      
+  }
+
+   
   
     public Carreras() {
     }
 
-    public Carreras(Long id, String temporadaCarrera, String cantPilCarrera, int multiplCarrera, Date fechaCarrera, Autodromo autodromo, Categorias categorias) {
-        this.id = id;
+    public Carreras(Long idCarreras, String temporadaCarrera, int cantPilCarrera, int multiplCarrera, Date fechaCarrera, Autodromo autodromo, Categorias categorias) {
+        this.idCarreras = idCarreras;
         this.temporadaCarrera = temporadaCarrera;
         this.cantPilCarrera = cantPilCarrera;
         this.multiplCarrera = multiplCarrera;
@@ -49,6 +55,9 @@ public class Carreras implements Serializable {
         this.categorias = categorias;
     }
 
+   
+
+    
    
 
     

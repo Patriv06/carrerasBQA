@@ -2,6 +2,7 @@
 package com.back.carreras.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,27 +22,31 @@ import lombok.Setter;
 public class Categorias implements  Serializable{
      @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idCat;
     private String idCategoria;
     private String nombreCategoria;
     private float ponderadorCategoria;
     private String linkCategoria;
 
-
-
-    @OneToMany(mappedBy = "categorias", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Carreras> carreras;
     public Categorias() {
     }
 
-    public Categorias(Long id, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria, Set<Carreras> carreras) {
-        this.id = id;
+    public Categorias(Long idCat, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
+        this.idCat = idCat;
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.ponderadorCategoria = ponderadorCategoria;
         this.linkCategoria = linkCategoria;
-        this.carreras = carreras;
     }
+
+
+
+    
+    
+        
+    }
+
+   
 
   
 
@@ -52,4 +57,3 @@ public class Categorias implements  Serializable{
    
     
     
-}

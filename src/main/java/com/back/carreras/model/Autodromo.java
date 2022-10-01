@@ -2,7 +2,9 @@
 package com.back.carreras.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -20,19 +22,26 @@ import lombok.Setter;
 public class Autodromo implements Serializable{
       @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idAutodromo;
     private String  nombreAutodromo;
-  @OneToMany(mappedBy = "autodromo", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Carreras> carreras;
+    
+  
+  
+ 
     
     public Autodromo() {
     }
 
-    public Autodromo(Long id, String nombreAutodromo, Set<Carreras> carreras) {
-        this.id = id;
+    public Autodromo(Long idAutodromo, String nombreAutodromo) {
+        this.idAutodromo = idAutodromo;
         this.nombreAutodromo = nombreAutodromo;
-        this.carreras = carreras;
     }
+
+  
+
+  
+
+    
 
    
     

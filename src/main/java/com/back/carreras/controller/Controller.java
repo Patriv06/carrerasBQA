@@ -4,14 +4,17 @@ package com.back.carreras.controller;
 
 
 import com.back.carreras.model.Autodromo;
+import com.back.carreras.model.CarreraPiloto;
 import com.back.carreras.model.Carreras;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
 import com.back.carreras.model.Pilotos;
 import com.back.carreras.model.Sponsors;
 import com.back.carreras.service.IAutodromoService;
+import com.back.carreras.service.ICarreraPilotoService;
 import com.back.carreras.service.ICarrerasService;
 import com.back.carreras.service.ICategoriasService;
+
 import com.back.carreras.service.INoticiasService;
 import com.back.carreras.service.IPilotosService;
 import com.back.carreras.service.ISponsorsService;
@@ -266,5 +269,39 @@ public class Controller {
         return carServ.verCarrerasOrdenadas();
     }
    //carreraPiloto
+      
+     @Autowired
+      ICarreraPilotoService  carpilotServ;
+    @PostMapping ("/carreraPilotos")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void agregarCarreraPilotos (@RequestBody CarreraPiloto carpil){
+     //   listaCategorias.add(cat);
+     carpilotServ.crearCarreraPilotos(carpil);
+    }
+    
+    @GetMapping ("/ver/carreraPilotos")
+    @ResponseBody
+  //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public List <CarreraPiloto> verCarreraPilotos(){
+    
+    
+     return carpilotServ.verCarreraPilotos();
+    }
+    @DeleteMapping ("/delete/carreraPilotos/{id}")
+    //@CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void borrarCarreraPilotos(@PathVariable Long id){
+        carpilotServ.borrarCarreraPilotos(id);
+    }
+    
+    @PutMapping("/modif/carreraPilotos")
+   // @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins="https://ranking-backoffice.web.app")
+    public void modificarCarreraPilotos(@RequestBody CarreraPiloto carpil){
+        carpilotServ.modifCarreraPilotos(carpil); }
+    
+    
     
 }

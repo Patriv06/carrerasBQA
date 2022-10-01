@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Pilotos implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idPiloto;
     private String nombrePiloto;
     private String apellidoPiloto;
     private String urlImgPiloto;
@@ -33,15 +33,16 @@ public class Pilotos implements Serializable{
     public Pilotos() {
     }
 
-    public Pilotos(Long id, String nombrePiloto, String apellidoPiloto, String urlImgPiloto, float puntajeAntPiloto, float puntajeActPiloto, Set<CarreraPiloto> carreraPiloto) {
-        this.id = id;
+    public Pilotos(Long idPiloto, String nombrePiloto, String apellidoPiloto, String urlImgPiloto, float puntajeAntPiloto, float puntajeActPiloto) {
+        this.idPiloto = idPiloto;
         this.nombrePiloto = nombrePiloto;
         this.apellidoPiloto = apellidoPiloto;
         this.urlImgPiloto = urlImgPiloto;
         this.puntajeAntPiloto = puntajeAntPiloto;
         this.puntajeActPiloto = puntajeActPiloto;
-     
     }
+
+   
 
    
     }
