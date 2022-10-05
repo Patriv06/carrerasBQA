@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import javax.persistence.Temporal;
 import lombok.Getter;
@@ -29,19 +30,13 @@ public class Carreras implements Serializable {
     
 
   @ManyToOne
-  @JoinColumn(name= "idAutodromo")
+  
   private Autodromo autodromo;
   
   @ManyToOne
-  @JoinColumn(name= "idCat")
+ 
   private Categorias categorias;
-  
-  public void agregarAutodromo(Autodromo autodromo){
-      
-  }
 
-   
-  
     public Carreras() {
     }
 
@@ -54,15 +49,6 @@ public class Carreras implements Serializable {
         this.autodromo = autodromo;
         this.categorias = categorias;
     }
+  
 
-   
-
-    
-   
-
-    
-    
-    
-    
-    
 }
