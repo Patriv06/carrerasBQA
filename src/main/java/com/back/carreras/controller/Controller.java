@@ -154,6 +154,16 @@ public class Controller {
     
      return autServ.verAutodromo();
     }
+    
+      @GetMapping ("/ver/autodromos/{id}")
+    @ResponseBody
+   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void verAutodromosPorId(@PathVariable Long id){
+    
+    
+    autServ.buscarAutodromo(id);
+    }
+    
     @DeleteMapping ("/delete/autodromos/{id}")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarAutodromo(@PathVariable Long id){
