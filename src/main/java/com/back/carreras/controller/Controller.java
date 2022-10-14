@@ -9,6 +9,7 @@ import com.back.carreras.model.Carreras;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
 import com.back.carreras.model.Pilotos;
+import com.back.carreras.model.PuntPorCarrera;
 import com.back.carreras.model.Sponsors;
 import com.back.carreras.service.IAutodromoService;
 import com.back.carreras.service.ICarreraPilotoService;
@@ -17,6 +18,7 @@ import com.back.carreras.service.ICategoriasService;
 
 import com.back.carreras.service.INoticiasService;
 import com.back.carreras.service.IPilotosService;
+import com.back.carreras.service.IPuntPorCarreraService;
 import com.back.carreras.service.ISponsorsService;
 
 
@@ -281,6 +283,37 @@ public class Controller {
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void modificarCarreraPilotos(@RequestBody CarreraPiloto carpil){
         carpilotServ.modifCarreraPilotos(carpil); }
+    
+    
+     //puntPor}Carrera
+      
+     @Autowired
+      IPuntPorCarreraService  ppcarrServ;
+    @PostMapping ("/puntPorCarrera")
+   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void agregarPuntPrCarrera (@RequestBody PuntPorCarrera puntPorCarr){
+     //   listaCategorias.add(cat);
+     ppcarrServ.crearPuntPorCarrera(puntPorCarr);
+    }
+    
+    @GetMapping ("/ver/puntPorCarr")
+    @ResponseBody
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public List <PuntPorCarrera> verPuntPorCarrera(){
+    
+    
+     return ppcarrServ.verPuntPorCarrera();
+    }
+    @DeleteMapping ("/delete/puntPorCarreras/{id}")
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void borrarPuntPorCarreras(@PathVariable Long id){
+        ppcarrServ.borrarPuntPorCarrera(id);
+    }
+    
+    @PutMapping("/modif/puntPorCarrera")
+   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void modificarPuntPorCarreras(@RequestBody PuntPorCarrera ppcarr){
+        ppcarrServ.modifPuntPorCarrera(ppcarr); }
     
     
     
