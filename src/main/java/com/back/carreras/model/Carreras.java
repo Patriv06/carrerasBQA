@@ -8,9 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.NamedQuery;
+
 
 import javax.persistence.Temporal;
 import lombok.Getter;
@@ -18,6 +19,8 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
+@NamedQuery(name = "carreras.findByfechaCarrera",
+query = "select e from Carreras e where e.fechaCarrera = ?1")
 public class Carreras implements Serializable {
      @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
