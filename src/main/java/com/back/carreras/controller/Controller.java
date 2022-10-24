@@ -20,6 +20,7 @@ import com.back.carreras.service.INoticiasService;
 import com.back.carreras.service.IPilotosService;
 import com.back.carreras.service.IPuntPorCarreraService;
 import com.back.carreras.service.ISponsorsService;
+import java.util.Date;
 
 
 
@@ -237,6 +238,16 @@ public class Controller {
     
      return carServ.verCarreras();
     }
+    
+     @GetMapping ("/ver/carrerasOrdenadas/{fechaCarr}")
+    @ResponseBody
+  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+   
+    public List <Carreras> verCarrerasPorUnaFecha(@PathVariable Date fechaCarr){
+    
+     return carServ.buscarCarrerasPorFecha(fechaCarr);
+    }
+    
     @DeleteMapping ("/delete/carreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarCarreras(@PathVariable Long id){
@@ -285,7 +296,7 @@ public class Controller {
         carpilotServ.modifCarreraPilotos(carpil); }
     
     
-     //puntPor}Carrera
+     //puntPorCarrera
       
      @Autowired
       IPuntPorCarreraService  ppcarrServ;

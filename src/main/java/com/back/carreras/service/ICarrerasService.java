@@ -6,6 +6,7 @@ package com.back.carreras.service;
 
 
 import com.back.carreras.model.Carreras;
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,5 +22,8 @@ public interface ICarrerasService {
     public void modifCarreras(Carreras car);
     
     public List<Carreras> verCarrerasOrdenadas();
+    
+    public List<Carreras> buscarCarrerasPorFecha(Date fechaCarrera);
+    
     
 }

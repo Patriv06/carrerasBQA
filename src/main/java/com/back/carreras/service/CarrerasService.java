@@ -7,6 +7,7 @@ package com.back.carreras.service;
 
 import com.back.carreras.model.Carreras;
 import com.back.carreras.repository.CarrerasRepository;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -49,6 +50,12 @@ public class CarrerasService implements ICarrerasService {
         carRepo.save(car);
     }
 
+    @Override
+    public List<Carreras> buscarCarrerasPorFecha(Date fechaCarrera) {
+       return (List<Carreras>) carRepo.findByFechaCarrera(fechaCarrera);
+    }
+
+   
     
 
    
