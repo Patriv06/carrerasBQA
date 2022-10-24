@@ -17,11 +17,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface CarrerasRepository extends JpaRepository<Carreras, Long> {
     
-    @Query(
-        value="SELECT * FROM carreras WHERE carreras.fechaCarrera LIKE %:FCarr%",
-        nativeQuery=true             
-                )
-  
-    public List<Carreras> encontrar(@Param("FCarr") Date FCarr);
+  @Query("from Carreras c where DATE(c.fechaCarrera) = :date")
+public List<Carreras> findByDate(@Param("date") Date date);
    
 }

@@ -241,10 +241,10 @@ public class Controller {
      return carServ.verCarreras();
     }
         @GetMapping ("/ver/carrerasOrdenadas")
-    @ResponseBody
+   
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-        public ResponseEntity<?> buscaCarrerasOrdenadas(@RequestParam Date FCarr){
-            return (ResponseEntity<?>) carServ.buscarCarrerasPorFecha(FCarr);
+        public List<Carreras> buscaCarrerasOrdenadas(@RequestParam Date FCarr){
+            return  carServ.buscarCarrerasPorFecha(FCarr);
    
    // public List <Carreras> verCarrerasPorUnaFecha(@PathVariable Date fechaCarr){
     
@@ -252,6 +252,14 @@ public class Controller {
     }
     
  
+        
+        
+        
+        
+        
+        
+        
+        
     @DeleteMapping ("/delete/carreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarCarreras(@PathVariable Long id){
