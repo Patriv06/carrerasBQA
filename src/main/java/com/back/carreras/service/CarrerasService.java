@@ -51,8 +51,10 @@ public class CarrerasService implements ICarrerasService {
     }
 
     @Override
-    public List<Carreras> buscarCarrerasPorFecha(Date fechaCarrera) {
-        return carRepo.findByfechaCarrera(fechaCarrera);
+    public List<Carreras> buscarCarrerasPorFecha(Date FCarr){
+        
+        return carRepo.encontrar(FCarr);}
+        
     }
 
   
@@ -65,4 +67,4 @@ public class CarrerasService implements ICarrerasService {
    
    
     
-}
+

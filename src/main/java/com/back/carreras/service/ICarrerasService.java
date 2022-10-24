@@ -23,7 +23,7 @@ public interface ICarrerasService {
     
     public List<Carreras> verCarrerasOrdenadas();
     
-    public List<Carreras> buscarCarrerasPorFecha(Date fechaCarrera);
+    public List<Carreras> buscarCarrerasPorFecha(Date Fcarr);
     
     
 }

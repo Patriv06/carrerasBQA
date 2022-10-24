@@ -19,8 +19,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-@NamedQuery(name = "carreras.findByfechaCarrera",
-query = "select e from Carreras e where e.fechaCarrera = ?1")
+
 public class Carreras implements Serializable {
      @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
