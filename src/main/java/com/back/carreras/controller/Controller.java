@@ -243,7 +243,7 @@ public class Controller {
         @GetMapping ("/ver/carrerasOrdenadas")
    
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-        public List<Carreras> buscaCarrerasOrdenadas(@RequestParam Date FCarr){
+        public List <Carreras> buscaCarrerasOrdenadas(@RequestParam Date FCarr){
             return  carServ.buscarCarrerasPorFecha(FCarr);
    
    // public List <Carreras> verCarrerasPorUnaFecha(@PathVariable Date fechaCarr){
