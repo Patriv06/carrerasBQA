@@ -17,6 +17,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface CarrerasRepository extends JpaRepository<Carreras, Long> {
     
   
-public List<Carreras> findByfechaCarrera(Date FCarrera);
+public List<Carreras> findAllByfechaCarrera(Date fechaCarrera);
    
 }
