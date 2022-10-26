@@ -8,6 +8,7 @@ import com.back.carreras.model.CarreraPiloto;
 import com.back.carreras.model.Carreras;
 import com.back.carreras.model.Categorias;
 import com.back.carreras.model.Noticias;
+import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.model.Pilotos;
 import com.back.carreras.model.PuntPorCarrera;
 import com.back.carreras.model.Sponsors;
@@ -17,6 +18,7 @@ import com.back.carreras.service.ICarrerasService;
 import com.back.carreras.service.ICategoriasService;
 
 import com.back.carreras.service.INoticiasService;
+import com.back.carreras.service.IPilCatPuntService;
 import com.back.carreras.service.IPilotosService;
 import com.back.carreras.service.IPuntPorCarreraService;
 import com.back.carreras.service.ISponsorsService;
@@ -28,6 +30,7 @@ import java.util.Date;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -241,14 +244,14 @@ public class Controller {
      return carServ.verCarreras();
     }
         @GetMapping ("/ver/carrerasOrdenadas")
-   
+        @ResponseBody
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-        public List <Carreras> buscaCarrerasOrdenadas(@RequestParam Date FCarr){
-            return  carServ.buscarCarrerasPorFecha(FCarr);
+        public List <Carreras> verCarrerasOrdenadas(){
+       
+            
+            return  carServ.verCarrerasOrdenadas();
    
-   // public List <Carreras> verCarrerasPorUnaFecha(@PathVariable Date fechaCarr){
-    
-  //   return carServ.buscarCarrerasPorFecha(fechaCarr);
+ 
     }
     
  
@@ -277,35 +280,35 @@ public class Controller {
     public List <Carreras> verFechaCarrera(){
         return carServ.verCarrerasOrdenadas();
     }
-   //carreraPiloto
+   //PilCatPunt
       
      @Autowired
-      ICarreraPilotoService  carpilotServ;
-    @PostMapping ("/carreraPilotos")
+      IPilCatPuntService  pcpServ;
+    @PostMapping ("/pilCatPunt")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public void agregarCarreraPilotos (@RequestBody CarreraPiloto carpil){
+    public void agregarPilCatPunt (@RequestBody PilCatPunt pilcatpunt){
      //   listaCategorias.add(cat);
-     carpilotServ.crearCarreraPilotos(carpil);
+     pcpServ.crearPilCatPunt(pilcatpunt);
     }
     
-    @GetMapping ("/ver/carreraPilotos")
+    @GetMapping ("/ver/pilCatPunt")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public List <CarreraPiloto> verCarreraPilotos(){
+    public List <PilCatPunt> verPilCatPunt(){
     
     
-     return carpilotServ.verCarreraPilotos();
+     return pcpServ.verPilCatPunt();
     }
-    @DeleteMapping ("/delete/carreraPilotos/{id}")
+    @DeleteMapping ("/delete/pilCatPunt/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public void borrarCarreraPilotos(@PathVariable Long id){
-        carpilotServ.borrarCarreraPilotos(id);
+    public void borrarPilCatPunt(@PathVariable Long id){
+        pcpServ.borrarPilCatPunt(id);
     }
     
-    @PutMapping("/modif/carreraPilotos")
+    @PutMapping("/modif/pilCatPunt")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public void modificarCarreraPilotos(@RequestBody CarreraPiloto carpil){
-        carpilotServ.modifCarreraPilotos(carpil); }
+    public void modificarPilCatPunt(@RequestBody PilCatPunt pilcp){
+        pcpServ.modifPilCatPunt(pilcp); }
     
     
      //puntPorCarrera
@@ -338,6 +341,8 @@ public class Controller {
     public void modificarPuntPorCarreras(@RequestBody PuntPorCarrera ppcarr){
         ppcarrServ.modifPuntPorCarrera(ppcarr); }
     
+ 
+      
     
     
 }

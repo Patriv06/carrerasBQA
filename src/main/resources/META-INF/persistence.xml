@@ -10,6 +10,7 @@
     <class>com.back.carreras.model.Sponsors</class>
     <class>com.back.carreras.model.Carreras</class>
     <class>com.back.carreras.model.PuntPorCarrera</class>
+    <class>com.back.carreras.model.PilCatPunt</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ranking?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
