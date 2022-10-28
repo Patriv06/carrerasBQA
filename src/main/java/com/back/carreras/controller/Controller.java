@@ -254,14 +254,6 @@ public class Controller {
  
     }
     
- 
-        
-        
-        
-        
-        
-        
-        
         
     @DeleteMapping ("/delete/carreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
@@ -311,9 +303,37 @@ public class Controller {
         pcpServ.modifPilCatPunt(pilcp); }
     
     
-     //puntPorCarrera
+     //carreraPiloto
       
      @Autowired
+      ICarreraPilotoService  carPilServ;
+    @PostMapping ("/carreraPiloto")
+   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void agregarCarreraPiloto (@RequestBody CarreraPiloto carPil){
+     //   listaCategorias.add(cat);
+     carPilServ.crearCarreraPilotos(carPil);
+    }
+    
+    @GetMapping ("/ver/carreraPiloto")
+    @ResponseBody
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public List <CarreraPiloto> verCarreraPiloto(){
+    
+    
+     return carPilServ.verCarreraPilotos();
+    }
+    @DeleteMapping ("/delete/carreraPiloto/{id}")
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void borrarCarreraPiloto(@PathVariable Long id){
+        carPilServ.borrarCarreraPilotos(id);
+    }
+    
+    @PutMapping("/modif/carreraPiloto")
+   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public void modificarCarreraPiloto(@RequestBody CarreraPiloto carPil){
+        carPilServ.modifCarreraPilotos(carPil); }
+//PuntosPorCarrera
+  @Autowired
       IPuntPorCarreraService  ppcarrServ;
     @PostMapping ("/puntPorCarrera")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
@@ -341,7 +361,6 @@ public class Controller {
     public void modificarPuntPorCarreras(@RequestBody PuntPorCarrera ppcarr){
         ppcarrServ.modifPuntPorCarrera(ppcarr); }
     
- 
       
     
     
