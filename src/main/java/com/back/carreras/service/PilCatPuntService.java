@@ -40,5 +40,10 @@ public class PilCatPuntService implements IPilCatPuntService {
     public void modifPilCatPunt(PilCatPunt pcp) {
         pilcprep.save(pcp);
     }
+
+    @Override
+    public List<PilCatPunt> verPilCatPutxPilyCat(String Pil, String Cat) {
+        return pilcprep.findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(Pil, Cat);
+    }
     
 }
