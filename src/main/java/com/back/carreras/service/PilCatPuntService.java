@@ -42,8 +42,8 @@ public class PilCatPuntService implements IPilCatPuntService {
     }
 
     @Override
-    public List<PilCatPunt> verPilCatPutxPilyCat(String Pil, String Cat) {
-        return pilcprep.findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(Pil, Cat);
+    public List<PilCatPunt> verPilCatPutxPilyCat(String Pil) {
+        return pilcprep.findByNombrePilotoPilCatPunt(Pil);
     }
     
 }
