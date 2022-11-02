@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PilCatPuntRepository extends JpaRepository<PilCatPunt, Long> {
-   public List<PilCatPunt> findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(String nombrePilotoPilCatPunt, String idCategoriaPilCatPunt);
+   public PilCatPunt findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(String nombrePilotoPilCatPunt, String idCategoriaPilCatPunt);
     
+
 }

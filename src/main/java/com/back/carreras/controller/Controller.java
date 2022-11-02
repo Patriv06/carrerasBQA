@@ -305,7 +305,7 @@ public class Controller {
      @GetMapping ("/ver/pilCatPuntX/{Pil}/{Cat}")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public List <PilCatPunt> verPilCatPuntX(@PathVariable String Pil, String Cat){
+    public PilCatPunt verPilCatPuntX(@PathVariable String Pil, String Cat){
     
     
      return pcpServ.verPilCatPutxPilyCat(Pil, Cat);
