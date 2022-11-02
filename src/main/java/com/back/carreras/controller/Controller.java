@@ -12,6 +12,7 @@ import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.model.Pilotos;
 import com.back.carreras.model.PuntPorCarrera;
 import com.back.carreras.model.Sponsors;
+import com.back.carreras.repository.PilCatPuntRepository;
 import com.back.carreras.service.IAutodromoService;
 import com.back.carreras.service.ICarreraPilotoService;
 import com.back.carreras.service.ICarrerasService;
@@ -31,6 +32,7 @@ import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -310,15 +312,22 @@ public class Controller {
     
      return pcpServ.verPilCatPutxPil(Pil);
     }
+    @Autowired
+    PilCatPuntRepository PCPR;
+    
     @GetMapping("/ver/pilCatPuntXPilotoYXCategoria")
      @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    @ResponseBody
-	public List<PilCatPunt> verPilCatPuntxPilyCat(@RequestParam String nombrePilotoPilCatPunt, 
+    //
+	//public List<PilCatPunt> verPilCatPuntxPilyCat(@RequestParam String nombrePilotoPilCatPunt, 
+	//			@RequestParam String idCategoriaPilCatPunt) {
+	//	return pcpServ.verPilCatPutxPilYCat(idCategoriaPilCatPunt, idCategoriaPilCatPunt);
+	//}
+   
+    
+	public ResponseEntity<List<PilCatPunt>> getPilCatPuntPorNombreyCat(@RequestParam String nombrePilotoPilCatPunt, 
 				@RequestParam String idCategoriaPilCatPunt) {
-		return pcpServ.verPilCatPutxPilYCat(idCategoriaPilCatPunt, idCategoriaPilCatPunt);
+		return new ResponseEntity<List<PilCatPunt>>(PCPR.findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(nombrePilotoPilCatPunt, idCategoriaPilCatPunt), HttpStatus.OK);
 	}
-    
-    
     
     
     
