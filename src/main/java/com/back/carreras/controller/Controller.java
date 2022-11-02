@@ -302,14 +302,29 @@ public class Controller {
     public void modificarPilCatPunt(@RequestBody PilCatPunt pilcp){
         pcpServ.modifPilCatPunt(pilcp); }
     
-     @GetMapping ("/ver/pilCatPuntX/{Pil}")
+     @GetMapping ("/ver/pilCatPuntXPiloto/{Pil}")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public List<PilCatPunt> verPilCatPuntX(@PathVariable String Pil){
     
     
-     return pcpServ.verPilCatPutxPilyCat(Pil);
+     return pcpServ.verPilCatPutxPil(Pil);
     }
+    @GetMapping("/ver/pilCatPuntXPilotoYXCategoria")
+     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    @ResponseBody
+	public List<PilCatPunt> verPilCatPuntxPilyCat(@RequestParam String nombrePilotoPilCatPunt, 
+				@RequestParam String idCategoriaPilCatPunt) {
+		return pcpServ.verPilCatPutxPilYCat(idCategoriaPilCatPunt, idCategoriaPilCatPunt);
+	}
+    
+    
+    
+    
+    
+    
+    
+    
      //carreraPiloto
       
      @Autowired

@@ -8,7 +8,9 @@ import java.util.List;
 public interface IPilCatPuntService {
   public List<PilCatPunt> verPilCatPunt();
   
-  public List<PilCatPunt> verPilCatPutxPilyCat(String Pil);
+  public List<PilCatPunt> verPilCatPutxPil(String Pil);
+  
+   public List<PilCatPunt> verPilCatPutxPilYCat(String Pil, String Cat);
     
     public void crearPilCatPunt(PilCatPunt pcp);
     
