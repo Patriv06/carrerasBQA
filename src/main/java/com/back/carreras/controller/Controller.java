@@ -24,7 +24,7 @@ import com.back.carreras.service.IPilCatPuntService;
 import com.back.carreras.service.IPilotosService;
 import com.back.carreras.service.IPuntPorCarreraService;
 import com.back.carreras.service.ISponsorsService;
-import java.util.Date;
+
 
 
 
@@ -32,7 +32,6 @@ import java.util.Date;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -385,11 +384,11 @@ public class Controller {
     }
     
      @GetMapping ("/ver/puntPorCarrXQYPos")
-    @ResponseBody
+    
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarrera, 
+    public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
 				@RequestParam int puestoPPCarrera) {
-		return new ResponseEntity<List<PuntPorCarrera>>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarrera, puestoPPCarrera), HttpStatus.OK);
+		return new ResponseEntity<List<PuntPorCarrera>>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
     }
     
      
