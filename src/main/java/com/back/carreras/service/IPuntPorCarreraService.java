@@ -14,7 +14,7 @@ import java.util.List;
 public interface IPuntPorCarreraService {
     public List<PuntPorCarrera> verPuntPorCarrera();
     
-    public List<PuntPorCarrera> verPuntPorCarreraOrdXQAutos(int autos, int posicion);
+
     
     public void crearPuntPorCarrera(PuntPorCarrera ppc);
     
