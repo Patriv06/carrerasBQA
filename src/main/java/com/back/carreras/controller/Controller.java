@@ -393,7 +393,7 @@ public class Controller {
 		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
     }
                                                                             
-     @GetMapping ("/ver/puntPorCarrXQYPos")
+     @GetMapping ("/ver/puntPorCarrXQ")
     
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarr(@RequestParam int autosPPCarreras
