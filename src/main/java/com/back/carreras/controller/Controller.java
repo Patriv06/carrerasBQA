@@ -387,19 +387,19 @@ public class Controller {
      @GetMapping ("/ver/puntPorCarrXQYPos")
     
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public ResponseEntity<List<PuntPorCarrera[]>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
+    public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
 				@RequestParam int puestoPPCarrera) {
                  
 		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
     }
                                                                             
-     @GetMapping ("/ver/puntPorCarrXQ")
+     @GetMapping ("/ver/puntPorCarrXQ/{qautos}")
     
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
-    public ResponseEntity<List<PuntPorCarrera[]>> getPuntPoCarr(@RequestParam int autosPPCarreras
+    public void getPuntPoCarr(@PathVariable int autosPPCarreras
 				) {
                  
-		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarreras(autosPPCarreras), HttpStatus.OK);
+		ppcarrRepo.findByAutosPPCarreras(autosPPCarreras);
     }
     @DeleteMapping ("/delete/puntPorCarreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
