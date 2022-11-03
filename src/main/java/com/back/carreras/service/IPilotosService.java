@@ -13,6 +13,8 @@ import java.util.List;
 public interface IPilotosService {
      public List<Pilotos> verPilotos();
     
+     public List<Pilotos> verPilotosXNombre(String nom);
+     
     public void crearPilotos(Pilotos pilot);
     
     public void borrarPilotos(Long id);

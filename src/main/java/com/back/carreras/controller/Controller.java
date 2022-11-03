@@ -203,6 +203,15 @@ public class Controller {
     
      return pilotServ.verPilotos();
     }
+    
+     @GetMapping ("/ver/pilotosXnombre/{nom}")
+    @ResponseBody
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public List <Pilotos> verPilotosXnombre (@PathVariable String nom){
+     return pilotServ.verPilotosXNombre(nom);
+    }
+    
+    
     @DeleteMapping ("/delete/pilotos/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarPilotos(@PathVariable Long id){
@@ -380,7 +389,7 @@ public class Controller {
      return ppcarrServ.verPuntPorCarrera();
     }
     
-     @GetMapping ("/ver/puntPorCarrXQ")
+     @GetMapping ("/ver/puntPorCarrXQ/{qautos}")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public List <PuntPorCarrera> verPuntPorCarreraOrdXQAutos(@PathVariable int autos){

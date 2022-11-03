@@ -55,6 +55,11 @@ public class PilotosService implements IPilotosService{
                .findAll(sortOrder);
     }
 
+    @Override
+    public List<Pilotos> verPilotosXNombre(String nom) {
+        return pilotRepo.findByNombrePiloto(nom);
+    }
+
    
     
 }
