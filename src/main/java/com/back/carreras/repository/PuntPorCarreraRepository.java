@@ -5,6 +5,7 @@
 package com.back.carreras.repository;
 
 import com.back.carreras.model.PuntPorCarrera;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -12,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author priva
  */
 public interface PuntPorCarreraRepository extends JpaRepository<PuntPorCarrera, Long>{
-    
+    public List <PuntPorCarrera> findByAutosPPCarreras (int autosPPCarreras);
 }

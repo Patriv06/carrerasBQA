@@ -377,10 +377,16 @@ public class Controller {
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public List <PuntPorCarrera> verPuntPorCarrera(){
-    
-    
      return ppcarrServ.verPuntPorCarrera();
     }
+    
+     @GetMapping ("/ver/puntPorCarrXQ")
+    @ResponseBody
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public List <PuntPorCarrera> verPuntPorCarreraOrdXQAutos(@PathVariable int autos){
+     return ppcarrServ.verPuntPorCarreraOrdXQAutos(autos);
+    }
+    
     @DeleteMapping ("/delete/puntPorCarreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarPuntPorCarreras(@PathVariable Long id){
