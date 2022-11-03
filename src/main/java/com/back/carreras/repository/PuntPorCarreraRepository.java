@@ -14,4 +14,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface PuntPorCarreraRepository extends JpaRepository<PuntPorCarrera, Long>{
     public List <PuntPorCarrera> findByAutosPPCarrerasAndPuestoPPCarrera (int autosPPCarreras, int puestoPPCarrera);
+     public List <PuntPorCarrera> findByAutosPPCarreras (int autosPPCarreras);
 }

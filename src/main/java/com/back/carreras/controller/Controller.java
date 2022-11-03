@@ -369,6 +369,7 @@ public class Controller {
   @Autowired
       IPuntPorCarreraService  ppcarrServ;
       PuntPorCarreraRepository ppcarrRepo;
+      
     @PostMapping ("/puntPorCarrera")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void agregarPuntPrCarrera (@RequestBody PuntPorCarrera puntPorCarr){
@@ -388,10 +389,18 @@ public class Controller {
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
 				@RequestParam int puestoPPCarrera) {
-		return new ResponseEntity<List<PuntPorCarrera>>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
+                 
+		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
     }
+                                                                            
+     @GetMapping ("/ver/puntPorCarrXQYPos")
     
-     
+    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+    public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarr(@RequestParam int autosPPCarreras
+				) {
+                 
+		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarreras(autosPPCarreras), HttpStatus.OK);
+    }
     @DeleteMapping ("/delete/puntPorCarreras/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarPuntPorCarreras(@PathVariable Long id){
