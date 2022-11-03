@@ -38,8 +38,11 @@ public class PuntPorCarreraService implements IPuntPorCarreraService {
     }
 
     @Override
-    public List<PuntPorCarrera> verPuntPorCarreraOrdXQAutos(int autos) {
-        return ppcarrRepo.findByAutosPPCarreras(autos);
+    public List<PuntPorCarrera> verPuntPorCarreraOrdXQAutos(int autos, int puesto) {
+        return ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autos, puesto);
     }
+
+   
+  
     
 }
