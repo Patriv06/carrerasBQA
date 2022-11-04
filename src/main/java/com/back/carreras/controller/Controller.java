@@ -368,6 +368,7 @@ public class Controller {
 //PuntosPorCarrera
   @Autowired
       IPuntPorCarreraService  ppcarrServ;
+  @Autowired
       PuntPorCarreraRepository ppcarrRepo;
       
     @PostMapping ("/puntPorCarrera")
@@ -390,7 +391,7 @@ public class Controller {
     public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
 				@RequestParam int puestoPPCarrera) {
                  
-		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
+		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.ACCEPTED);
     }
                                                                             
      @GetMapping ("/ver/puntPorCarrXQ/{qautos}")

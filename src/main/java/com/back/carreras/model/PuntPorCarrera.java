@@ -28,6 +28,9 @@ public class PuntPorCarrera implements Serializable {
         this.autosPPCarreras = autosPPCarreras;
         this.puntosPPCarreras = puntosPPCarreras;
     }
+
+   
+
     
     
     
