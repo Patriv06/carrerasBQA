@@ -12,6 +12,7 @@ import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.model.Pilotos;
 import com.back.carreras.model.PuntPorCarrera;
 import com.back.carreras.model.Sponsors;
+import com.back.carreras.repository.CategoriasRepository;
 import com.back.carreras.repository.PilCatPuntRepository;
 import com.back.carreras.repository.PuntPorCarreraRepository;
 import com.back.carreras.service.IAutodromoService;
@@ -69,6 +70,17 @@ public class Controller {
     
      return cateServ.verCategorias();
     }
+    
+     @Autowired
+    CategoriasRepository catRep;
+    
+    @GetMapping("/ver/catXIdCat")
+     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
+	public ResponseEntity<List<Categorias>> getcategoriasPorIdCat(@RequestParam String idCategoria) {
+		return new ResponseEntity<List<Categorias>>(catRep.findByIdCategoria(idCategoria), HttpStatus.OK);
+	}
+    
+    
     @DeleteMapping ("/delete/categorias/{id}")
      @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app"} )
     public void borrarCategorias(@PathVariable Long id){
