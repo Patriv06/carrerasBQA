@@ -403,7 +403,7 @@ public class Controller {
     public ResponseEntity<List<PuntPorCarrera>> getPuntPoCarrXQautosyPos(@RequestParam int autosPPCarreras, 
 				@RequestParam int puestoPPCarrera) {
                  
-		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(ppcarrRepo.findByAutosPPCarrerasAndPuestoPPCarrera(autosPPCarreras, puestoPPCarrera), HttpStatus.OK);
     }
                                                                             
      @GetMapping ("/ver/puntPorCarrXQ/{qautos}")
