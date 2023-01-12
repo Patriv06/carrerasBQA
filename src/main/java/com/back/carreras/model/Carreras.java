@@ -3,6 +3,7 @@ package com.back.carreras.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,6 +51,36 @@ public class Carreras implements Serializable {
         this.fechaCarrera = fechaCarrera;
         this.autodromo = autodromo;
         this.categorias = categorias;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.fechaCarrera);
+        hash = 89 * hash + Objects.hashCode(this.autodromo);
+        hash = 89 * hash + Objects.hashCode(this.categorias);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Carreras other = (Carreras) obj;
+        if (!Objects.equals(this.fechaCarrera, other.fechaCarrera)) {
+            return false;
+        }
+        if (!Objects.equals(this.autodromo, other.autodromo)) {
+            return false;
+        }
+        return Objects.equals(this.categorias, other.categorias);
     }
   
 

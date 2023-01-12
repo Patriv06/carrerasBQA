@@ -4,10 +4,12 @@
  */
 package com.back.carreras.service;
 
+
 import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.repository.PilCatPuntRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -49,6 +51,23 @@ public class PilCatPuntService implements IPilCatPuntService {
     @Override
     public List<PilCatPunt> verPilCatPutxPilYCat(String Pil, String Cat) {
         return pilcprep.findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(Pil, Cat);
+    }
+
+    @Override
+    public List<PilCatPunt> verPCPOrdenadoXPuntAct() {
+             Sort sortOrder = Sort.by("posActPCP").descending(); 
+ 
+       return pilcprep
+               .findAll(sortOrder);
+        
+    }
+
+    @Override
+    public List<PilCatPunt> verPCPOrdenadoXPuntAnt() {
+        Sort sortOrder = Sort.by("posAntPCP").descending(); 
+ 
+       return pilcprep
+               .findAll(sortOrder);
     }
     
 }
