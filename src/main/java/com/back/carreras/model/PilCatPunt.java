@@ -40,34 +40,5 @@ public class PilCatPunt implements Serializable {
         this.puntosActPilCantPunt = puntosActPilCantPunt;
     }
 
-   
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.nombrePilotoPilCatPunt);
-        hash = 79 * hash + Objects.hashCode(this.idCategoriaPilCatPunt);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final PilCatPunt other = (PilCatPunt) obj;
-        if (!Objects.equals(this.nombrePilotoPilCatPunt, other.nombrePilotoPilCatPunt)) {
-            return false;
-        }
-        return Objects.equals(this.idCategoriaPilCatPunt, other.idCategoriaPilCatPunt);
-    }
-    
-    
     
 }

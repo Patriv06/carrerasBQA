@@ -5,6 +5,8 @@
 package com.back.carreras.service;
 
 
+
+
 import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.repository.PilCatPuntRepository;
 import java.util.List;
@@ -69,5 +71,6 @@ public class PilCatPuntService implements IPilCatPuntService {
        return pilcprep
                .findAll(sortOrder);
     }
+
     
 }
