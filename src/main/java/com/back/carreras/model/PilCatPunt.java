@@ -18,8 +18,6 @@ public class PilCatPunt implements Serializable {
     private Long idPilCatPunt;
     private int posActPCP;
     private int posAntPCP;
-    private int PuntTotActPCP;
-    private int PuntTotAntPCP;
     private String nombrePilotoPilCatPunt;
     private String idCategoriaPilCatPunt;
     private int puntosAntPilCantPunt;
@@ -28,17 +26,7 @@ public class PilCatPunt implements Serializable {
     public PilCatPunt() {
     }
 
-    public PilCatPunt(Long idPilCatPunt, int posActPCP, int posAntPCP, int PuntTotActPCP, int PuntTotAntPCP, String nombrePilotoPilCatPunt, String idCategoriaPilCatPunt, int puntosAntPilCantPunt, int puntosActPilCantPunt) {
-        this.idPilCatPunt = idPilCatPunt;
-        this.posActPCP = posActPCP;
-        this.posAntPCP = posAntPCP;
-        this.PuntTotActPCP = PuntTotActPCP;
-        this.PuntTotAntPCP = PuntTotAntPCP;
-        this.nombrePilotoPilCatPunt = nombrePilotoPilCatPunt;
-        this.idCategoriaPilCatPunt = idCategoriaPilCatPunt;
-        this.puntosAntPilCantPunt = puntosAntPilCantPunt;
-        this.puntosActPilCantPunt = puntosActPilCantPunt;
-    }
+   
 
     
 }

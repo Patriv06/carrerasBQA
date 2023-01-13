@@ -2,6 +2,7 @@
 package com.back.carreras.repository;
 
 
+
 import com.back.carreras.model.PilCatPunt;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

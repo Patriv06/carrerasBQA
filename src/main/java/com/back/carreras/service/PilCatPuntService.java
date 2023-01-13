@@ -7,6 +7,8 @@ package com.back.carreras.service;
 
 
 
+
+
 import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.repository.PilCatPuntRepository;
 import java.util.List;
@@ -57,7 +59,7 @@ public class PilCatPuntService implements IPilCatPuntService {
 
     @Override
     public List<PilCatPunt> verPCPOrdenadoXPuntAct() {
-             Sort sortOrder = Sort.by("posActPCP").descending(); 
+             Sort sortOrder = Sort.by("puntosActPilCantPunt").descending(); 
  
        return pilcprep
                .findAll(sortOrder);
@@ -66,11 +68,13 @@ public class PilCatPuntService implements IPilCatPuntService {
 
     @Override
     public List<PilCatPunt> verPCPOrdenadoXPuntAnt() {
-        Sort sortOrder = Sort.by("posAntPCP").descending(); 
+        Sort sortOrder = Sort.by("puntosAntPilCantPunt").descending(); 
  
        return pilcprep
                .findAll(sortOrder);
     }
+
+  
 
     
 }
