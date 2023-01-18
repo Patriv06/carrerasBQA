@@ -24,11 +24,12 @@ public class Noticias implements  Serializable {
     public Noticias() {
     }
 
-    public Noticias(Long id, Date fechaNoticia, String cuerpoNoticia) {
-        this.id = id;
+    public Noticias(Date fechaNoticia, String cuerpoNoticia) {
         this.fechaNoticia = fechaNoticia;
         this.cuerpoNoticia = cuerpoNoticia;
     }
+
+    
 
    
    

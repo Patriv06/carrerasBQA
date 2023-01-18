@@ -26,13 +26,14 @@ public class Categorias implements  Serializable{
     public Categorias() {
     }
 
-    public Categorias(Long idCat, String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
-        this.idCat = idCat;
+    public Categorias(String idCategoria, String nombreCategoria, float ponderadorCategoria, String linkCategoria) {
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.ponderadorCategoria = ponderadorCategoria;
         this.linkCategoria = linkCategoria;
     }
+
+   
 
 
 

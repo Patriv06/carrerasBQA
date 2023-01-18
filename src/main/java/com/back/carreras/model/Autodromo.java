@@ -27,8 +27,8 @@ public class Autodromo implements Serializable{
     public Autodromo() {
     }
 
-    public Autodromo(Long idAutodromo, String nombreAutodromo) {
-        this.idAutodromo = idAutodromo;
+    public Autodromo(String nombreAutodromo) {
+      
         this.nombreAutodromo = nombreAutodromo;
     }
 

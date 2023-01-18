@@ -22,13 +22,13 @@ public class PuntPorCarrera implements Serializable {
     public PuntPorCarrera() {
     }
 
-    public PuntPorCarrera(Long id, int puestoPPCarrera, int autosPPCarreras, int puntosPPCarreras) {
-        this.id = id;
+    public PuntPorCarrera(int puestoPPCarrera, int autosPPCarreras, int puntosPPCarreras) {
         this.puestoPPCarrera = puestoPPCarrera;
         this.autosPPCarreras = autosPPCarreras;
         this.puntosPPCarreras = puntosPPCarreras;
     }
 
+    
    
 
     

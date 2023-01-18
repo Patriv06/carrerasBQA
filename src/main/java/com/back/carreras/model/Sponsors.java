@@ -20,18 +20,14 @@ public class Sponsors implements  Serializable{
     private String espacioSponsor;
     private String logoSponsor;
 
-    public Sponsors(Long id, String nombreSponsor, String linkSponsor, String espacioSponsor, String logoSponsor) {
-        this.id = id;
+    public Sponsors(String nombreSponsor, String linkSponsor, String espacioSponsor, String logoSponsor) {
         this.nombreSponsor = nombreSponsor;
         this.linkSponsor = linkSponsor;
         this.espacioSponsor = espacioSponsor;
         this.logoSponsor = logoSponsor;
     }
+
     
-   
-    
-    
- 
 
     public Sponsors() {
     }

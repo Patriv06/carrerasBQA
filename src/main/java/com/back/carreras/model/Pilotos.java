@@ -33,14 +33,15 @@ public class Pilotos implements Serializable{
     public Pilotos() {
     }
 
-    public Pilotos(Long idPiloto, String nombrePiloto, String apellidoPiloto, String urlImgPiloto, float puntajeAntPiloto, float puntajeActPiloto) {
-        this.idPiloto = idPiloto;
+    public Pilotos(String nombrePiloto, String apellidoPiloto, String urlImgPiloto, float puntajeAntPiloto, float puntajeActPiloto) {
         this.nombrePiloto = nombrePiloto;
         this.apellidoPiloto = apellidoPiloto;
         this.urlImgPiloto = urlImgPiloto;
         this.puntajeAntPiloto = puntajeAntPiloto;
         this.puntajeActPiloto = puntajeActPiloto;
     }
+
+  
 
    
 

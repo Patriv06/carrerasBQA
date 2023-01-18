@@ -43,8 +43,7 @@ public class Carreras implements Serializable {
     public Carreras() {
     }
 
-    public Carreras(Long idCarreras, String temporadaCarrera, int cantPilCarrera, int multiplCarrera, Date fechaCarrera, Autodromo autodromo, Categorias categorias) {
-        this.idCarreras = idCarreras;
+    public Carreras(String temporadaCarrera, int cantPilCarrera, int multiplCarrera, Date fechaCarrera, Autodromo autodromo, Categorias categorias) {
         this.temporadaCarrera = temporadaCarrera;
         this.cantPilCarrera = cantPilCarrera;
         this.multiplCarrera = multiplCarrera;
@@ -53,35 +52,8 @@ public class Carreras implements Serializable {
         this.categorias = categorias;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.fechaCarrera);
-        hash = 89 * hash + Objects.hashCode(this.autodromo);
-        hash = 89 * hash + Objects.hashCode(this.categorias);
-        return hash;
-    }
+    
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Carreras other = (Carreras) obj;
-        if (!Objects.equals(this.fechaCarrera, other.fechaCarrera)) {
-            return false;
-        }
-        if (!Objects.equals(this.autodromo, other.autodromo)) {
-            return false;
-        }
-        return Objects.equals(this.categorias, other.categorias);
-    }
-  
+   
 
 }

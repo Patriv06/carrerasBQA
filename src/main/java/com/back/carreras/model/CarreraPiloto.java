@@ -28,36 +28,6 @@ public class CarreraPiloto implements Serializable {
   @JoinColumn(name= "idPiloto")
   private Pilotos pilotos;
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + this.puestoCarreraPiloto;
-        hash = 47 * hash + Objects.hashCode(this.pilotos);
-        hash = 47 * hash + Objects.hashCode(this.carreras);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CarreraPiloto other = (CarreraPiloto) obj;
-        if (this.puestoCarreraPiloto != other.puestoCarreraPiloto) {
-            return false;
-        }
-        if (!Objects.equals(this.pilotos, other.pilotos)) {
-            return false;
-        }
-        return Objects.equals(this.carreras, other.carreras);
-    }
-    
    
     @ManyToOne
   @JoinColumn(name= "idCarreras")
@@ -66,13 +36,13 @@ public class CarreraPiloto implements Serializable {
     public CarreraPiloto() {
     }
 
-    public CarreraPiloto(Long id, int puestoCarreraPiloto, Pilotos pilotos, Carreras carreras) {
-        this.id = id;
+    public CarreraPiloto(int puestoCarreraPiloto, Pilotos pilotos, Carreras carreras) {
         this.puestoCarreraPiloto = puestoCarreraPiloto;
         this.pilotos = pilotos;
         this.carreras = carreras;
     }
 
+   
     
 
     
