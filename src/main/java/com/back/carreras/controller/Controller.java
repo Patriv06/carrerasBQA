@@ -364,6 +364,19 @@ public class Controller {
         return pcpServ.verPCPOrdenadoXPuntAct();
     }
     
+     @GetMapping ("/ver/pcpOrdenadoXPosAnt")
+    @ResponseBody
+  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
+    public List <PilCatPunt> verpcpOrdenadoXPosAnt(){
+        return pcpServ.verPCPOrdenadoXPosAnt();
+    }
+    
+    @GetMapping ("/ver/pcpOrdenadoXPosAct")
+    @ResponseBody
+  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
+    public List <PilCatPunt> verpcpOrdenadoXPosAct(){
+        return pcpServ.verPCPOrdenadoXPosAct();
+    }
      //carreraPiloto
       
      @Autowired

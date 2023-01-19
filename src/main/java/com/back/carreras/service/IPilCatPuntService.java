@@ -26,4 +26,8 @@ public interface IPilCatPuntService {
     public List <PilCatPunt> verPCPOrdenadoXPuntAct();
     
     public List <PilCatPunt> verPCPOrdenadoXPuntAnt();
+    
+    public List <PilCatPunt> verPCPOrdenadoXPosAct();
+    
+    public List <PilCatPunt> verPCPOrdenadoXPosAnt();
 }
