@@ -6,6 +6,8 @@ package com.back.carreras.service;
 
 import com.back.carreras.model.PilCatPunt;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 
 public interface IPilCatPuntService {
@@ -27,7 +29,9 @@ public interface IPilCatPuntService {
     
     public List <PilCatPunt> verPCPOrdenadoXPuntAnt();
     
-    public List <PilCatPunt> verPCPOrdenadoXPosAct();
+    public Page <PilCatPunt> verPCPOrdenadoXPosAct(Pageable pageable);
     
     public List <PilCatPunt> verPCPOrdenadoXPosAnt();
+    
+    
 }

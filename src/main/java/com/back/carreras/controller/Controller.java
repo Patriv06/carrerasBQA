@@ -39,6 +39,9 @@ import com.back.carreras.service.ISponsorsService;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -371,12 +374,27 @@ public class Controller {
         return pcpServ.verPCPOrdenadoXPosAnt();
     }
     
-    @GetMapping ("/ver/pcpOrdenadoXPosAct")
+ /*   @GetMapping ("/ver/pcpOrdenadoXPosAct")
     @ResponseBody
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public List <PilCatPunt> verpcpOrdenadoXPosAct(){
-        return pcpServ.verPCPOrdenadoXPosAct();
+    public Page <PilCatPunt> verpcpOrdenadoXPosAct(){
+        return page pcpServ.verPCPOrdenadoXPosAct(Pageable pageable);
+    }*/
+    
+    @GetMapping ("/ver/pcpOrdenadoXPosAct")
+    public ResponseEntity<Page<PilCatPunt>> Controller(
+                                     @RequestParam (defaultValue = "0")int page,
+                                     @RequestParam (defaultValue = "20") int size
+                                     ){
+
+    Page <PilCatPunt> 
+       
+        pcpOrdenadoXPosAct = pcpServ.verPCPOrdenadoXPosAct(
+                PageRequest.of(page, size));
+    return new ResponseEntity<Page<PilCatPunt>>(pcpOrdenadoXPosAct, HttpStatus.OK);
     }
+    
+  
      //carreraPiloto
       
      @Autowired
