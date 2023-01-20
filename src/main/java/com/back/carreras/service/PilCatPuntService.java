@@ -91,20 +91,21 @@ public class PilCatPuntService implements IPilCatPuntService {
                .findAll(sortOrder);    
     }
 
-    /*@Override
+    @Override
     public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
  Sort sortOrder = Sort.by(Sort.Order.asc("posAntPCP"), Sort.Order.asc("idPilCatPunt")); 
  
        return pilcprep
-               .findAll(sortOrder);   */    
-@Override
+               .findAll(sortOrder);    
+/*@Override
     public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
  Pageable sortOrder =
       PageRequest.of(0,5,Sort.by(Sort.Order.asc("posAntPCP"), Sort.Order.asc("idPilCatPunt") ));
 return (List<PilCatPunt>) pilcprep
-               .findAll(sortOrder);      }
+               .findAll(sortOrder);      }*/   
 
   
 
     
+}
 }
