@@ -14,6 +14,7 @@ import com.back.carreras.repository.PilCatPuntRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -80,9 +81,7 @@ public class PilCatPuntService implements IPilCatPuntService {
     }
 
     /**
-     *
-     * @param pageable
-     * @return
+     PageRequest.of(0, 5)
      */
     @Override
     public List<PilCatPunt> verPCPOrdenadoXPosAct() {
@@ -92,17 +91,20 @@ public class PilCatPuntService implements IPilCatPuntService {
                .findAll(sortOrder);    
     }
 
-    @Override
+    /*@Override
     public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
  Sort sortOrder = Sort.by(Sort.Order.asc("posAntPCP"), Sort.Order.asc("idPilCatPunt")); 
  
        return pilcprep
-               .findAll(sortOrder);       }
-
-    
-    
+               .findAll(sortOrder);   */    
+@Override
+    public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
+ Pageable sortOrder =
+      PageRequest.of(0,5,Sort.by(Sort.Order.asc("posAntPCP"), Sort.Order.asc("idPilCatPunt") ));
+return (List<PilCatPunt>) pilcprep
+               .findAll(sortOrder);      }
 
   
-  
+
     
 }
