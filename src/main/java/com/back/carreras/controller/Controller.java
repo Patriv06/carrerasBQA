@@ -377,28 +377,15 @@ public class Controller {
     @GetMapping ("/ver/pcpOrdenadoXPosAct")
     @ResponseBody
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public Page <PilCatPunt> verpcpOrdenadoXPosAct( 
-                                     @RequestParam (defaultValue = "0")int page,
-                                     @RequestParam (defaultValue = "20") int size){
-        Pageable pageable = null;
+    public Page <PilCatPunt> verpcpOrdenadoXPosAct(Pageable pageable){
+                                     
+       
        
         return pcpServ.verPCPOrdenadoXPosAct(pageable);
     }
     
- /*   @GetMapping ("/ver/pcpOrdenadoXPosAct")
-    public ResponseEntity<Page<PilCatPunt>> Controller(
-                                     @RequestParam (defaultValue = "0")int page,
-                                     @RequestParam (defaultValue = "20") int size
-                                     ){
+ 
 
-    Page <PilCatPunt> 
-       
-        pcpOrdenadoXPosAct = pcpServ.verPCPOrdenadoXPosAct(
-                PageRequest.of(page, size));
-    return new ResponseEntity<>(pcpOrdenadoXPosAct, HttpStatus.OK);
-    }
-    */
-  
      //carreraPiloto
       
      @Autowired
