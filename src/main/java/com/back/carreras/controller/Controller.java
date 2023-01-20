@@ -377,11 +377,11 @@ public class Controller {
     @GetMapping ("/ver/pcpOrdenadoXPosAct")
     @ResponseBody
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public Page <PilCatPunt> verpcpOrdenadoXPosAct(Pageable pageable){
+    public List <PilCatPunt> verpcpOrdenadoXPosAct(){
                                      
        
        
-        return pcpServ.verPCPOrdenadoXPosAct(pageable);
+        return pcpServ.verPCPOrdenadoXPosAct();
     }
     
  

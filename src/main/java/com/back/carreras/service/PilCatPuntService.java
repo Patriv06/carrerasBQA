@@ -85,10 +85,10 @@ public class PilCatPuntService implements IPilCatPuntService {
      * @return
      */
     @Override
-    public Page<PilCatPunt> verPCPOrdenadoXPosAct(Pageable pageable) {
+    public List<PilCatPunt> verPCPOrdenadoXPosAct() {
   Sort sortOrder = Sort.by(Sort.Order.asc("posActPCP"), Sort.Order.asc("idPilCatPunt")); 
  
-       return (Page<PilCatPunt>) pilcprep
+       return  pilcprep
                .findAll(sortOrder);    
     }
 

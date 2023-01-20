@@ -29,7 +29,7 @@ public interface IPilCatPuntService {
     
     public List <PilCatPunt> verPCPOrdenadoXPuntAnt();
     
-    public Page <PilCatPunt> verPCPOrdenadoXPosAct(Pageable pageable);
+    public List <PilCatPunt> verPCPOrdenadoXPosAct();
     
     public List <PilCatPunt> verPCPOrdenadoXPosAnt();
     
