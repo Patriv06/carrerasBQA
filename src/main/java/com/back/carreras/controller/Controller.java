@@ -342,6 +342,14 @@ public class Controller {
     
      return pcpServ.verPilCatPutxPil(Pil);
     }
+    
+     @GetMapping ("/ver/pcpOrdenadoXCat/{Cat}")
+    @ResponseBody
+  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
+    public List <PilCatPunt> verpcpOrdenadoXCat(@PathVariable String Cat){
+                                    
+        return pcpServ.verPCPOrdenadoXCat(Cat);
+    }
     @Autowired
     PilCatPuntRepository PCPR;
     
@@ -384,15 +392,7 @@ public class Controller {
         return pcpServ.verPCPOrdenadoXPosAct();
     }
     
- @GetMapping ("/ver/pcpOrdenadoXCat/{Cat}")
-    @ResponseBody
-  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public List <PilCatPunt> verpcpOrdenadoXCat(@PathVariable String Cat){
-                                     
-       
-       
-        return pcpServ.verPCPOrdenadoXCat(Cat);
-    }
+
     
 
      //carreraPiloto
