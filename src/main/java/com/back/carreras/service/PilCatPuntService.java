@@ -56,6 +56,13 @@ public class PilCatPuntService implements IPilCatPuntService {
     }
 
     @Override
+    public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
+        
+    return pilcprep.findByIdCategoriaPilCatPunt(Cat);    }
+
+   
+    
+    @Override
     public List<PilCatPunt> verPilCatPutxPilYCat(String Pil, String Cat) {
         return pilcprep.findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt(Pil, Cat);
     }
@@ -98,11 +105,6 @@ public class PilCatPuntService implements IPilCatPuntService {
                .findAll(sortOrder);    
 
 }
-
-
-    @Override
-    public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
-        
-return pilcprep.findByIdCategoriaPilCatPunt(Cat);    }
-
 }
+
+  
