@@ -384,7 +384,16 @@ public class Controller {
         return pcpServ.verPCPOrdenadoXPosAct();
     }
     
- 
+ @GetMapping ("/ver/pcpOrdenadoXCat")
+    @ResponseBody
+  @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
+    public List <PilCatPunt> verpcpOrdenadoXCat(){
+                                     
+       
+       
+        return pcpServ.verPCPOrdenadoXCat();
+    }
+    
 
      //carreraPiloto
       

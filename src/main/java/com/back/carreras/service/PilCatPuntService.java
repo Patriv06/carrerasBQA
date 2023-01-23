@@ -80,16 +80,15 @@ public class PilCatPuntService implements IPilCatPuntService {
                .findAll(sortOrder);
     }
 
-    /**
-     PageRequest.of(0, 5)
-     */
-    @Override
+    
+   @Override
     public List<PilCatPunt> verPCPOrdenadoXPosAct() {
-  Sort sortOrder = Sort.by(Sort.Order.asc("posActPCP"), Sort.Order.asc("idPilCatPunt")); 
+ Sort sortOrder = Sort.by(Sort.Order.asc("posActPCP"), Sort.Order.asc("idPilCatPunt")); 
  
-       return  pilcprep
+       return pilcprep
                .findAll(sortOrder);    
-    }
+
+}
 
     @Override
     public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
@@ -97,15 +96,14 @@ public class PilCatPuntService implements IPilCatPuntService {
  
        return pilcprep
                .findAll(sortOrder);    
-/*@Override
-    public List<PilCatPunt> verPCPOrdenadoXPosAnt() {
- Pageable sortOrder =
-      PageRequest.of(0,5,Sort.by(Sort.Order.asc("posAntPCP"), Sort.Order.asc("idPilCatPunt") ));
-return (List<PilCatPunt>) pilcprep
-               .findAll(sortOrder);      }*/   
 
-  
-
-    
 }
+
+    @Override
+    public List<PilCatPunt> verPCPOrdenadoXCat() {
+Sort sortOrder = Sort.by(Sort.Order.asc("idCategoriaPilCatPunt"), Sort.Order.asc("posActPCP")); 
+ 
+       return pilcprep
+               .findAll(sortOrder);    
+    }
 }
