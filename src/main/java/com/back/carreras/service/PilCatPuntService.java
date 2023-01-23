@@ -103,6 +103,6 @@ public class PilCatPuntService implements IPilCatPuntService {
     @Override
     public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
         
-return pilcprep.findByidCategoriaPilCatPuntOrderbyposActPCP(Cat);    }
+return pilcprep.findByidCategoriaPilCatPunt(Cat);    }
 
 }
