@@ -33,7 +33,7 @@ public interface IPilCatPuntService {
     
     public List <PilCatPunt> verPCPOrdenadoXPosAnt();
     
-    public List <PilCatPunt> verPCPOrdenadoXCat();
+    public List <PilCatPunt> verPCPOrdenadoXCat(String Cat);
     
     
 }

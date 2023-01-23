@@ -99,11 +99,10 @@ public class PilCatPuntService implements IPilCatPuntService {
 
 }
 
+
     @Override
-    public List<PilCatPunt> verPCPOrdenadoXCat() {
-Sort sortOrder = Sort.by(Sort.Order.asc("idCategoriaPilCatPunt"), Sort.Order.asc("posActPCP")); 
- 
-       return pilcprep
-               .findAll(sortOrder);    
-    }
+    public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
+        
+return pilcprep.findByidCategoriaPilCatPuntOrderbyposActPCP(Cat);    }
+
 }

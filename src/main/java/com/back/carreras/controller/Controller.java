@@ -384,14 +384,14 @@ public class Controller {
         return pcpServ.verPCPOrdenadoXPosAct();
     }
     
- @GetMapping ("/ver/pcpOrdenadoXCat")
+ @GetMapping ("/ver/pcpOrdenadoXCat/{Cat}")
     @ResponseBody
   @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public List <PilCatPunt> verpcpOrdenadoXCat(){
+    public List <PilCatPunt> verpcpOrdenadoXCat(@PathVariable String Cat){
                                      
        
        
-        return pcpServ.verPCPOrdenadoXCat();
+        return pcpServ.verPCPOrdenadoXCat(Cat);
     }
     
 
