@@ -15,5 +15,5 @@ public interface PilCatPuntRepository extends JpaRepository<PilCatPunt, Long> {
    
    public List<PilCatPunt> findByNombrePilotoPilCatPuntAndIdCategoriaPilCatPunt (String nombrePilotoPilCatPunt, String idCategoriaPilCatPunt );
     
-  public List<PilCatPunt> findByIdCategoriaPilCatPunt(String idCategoriaPilCatPunt);
+  public List<PilCatPunt> findByIdCategoriaPilCatPuntOrderByPuntosActPilCantPunt(String idCategoriaPilCatPunt);
 }

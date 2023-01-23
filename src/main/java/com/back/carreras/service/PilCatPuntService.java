@@ -13,9 +13,6 @@ import com.back.carreras.model.PilCatPunt;
 import com.back.carreras.repository.PilCatPuntRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -58,7 +55,7 @@ public class PilCatPuntService implements IPilCatPuntService {
     @Override
     public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
         
-    return pilcprep.findByIdCategoriaPilCatPunt(Cat);    }
+    return pilcprep.findByIdCategoriaPilCatPuntOrderByPuntosActPilCantPunt(Cat);    }
 
    
     
