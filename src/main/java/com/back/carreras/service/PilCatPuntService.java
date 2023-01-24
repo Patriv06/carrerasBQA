@@ -55,7 +55,7 @@ public class PilCatPuntService implements IPilCatPuntService {
     @Override
     public List<PilCatPunt> verPCPOrdenadoXCat(String Cat) {
         
-    return pilcprep.findByIdCategoriaPilCatPuntOrderByPuntosActPilCantPunt(Cat);    }
+    return pilcprep.findByIdCategoriaPilCatPuntOrderByPuntosActPilCantPuntAsc(Cat);    }
 
    
     
