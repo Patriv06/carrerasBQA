@@ -10,12 +10,6 @@ import java.util.List;
 
 
 public interface IPilCatPuntService {
-  public List<PilCatPunt> verPilCatPunt();
-  
-  public List<PilCatPunt> verPilCatPutxPil(String Pil);
-  
-   public List<PilCatPunt> verPilCatPutxPilYCat(String Pil, String Cat);
-    
     public void crearPilCatPunt(PilCatPunt pcp);
     
     public void borrarPilCatPunt(Long id);
@@ -34,5 +28,9 @@ public interface IPilCatPuntService {
     
     public List <PilCatPunt> verPCPOrdenadoXCat(String Cat);
     
-    
+    public List<PilCatPunt> verPilCatPunt();
+  
+    public List<PilCatPunt> verPilCatPutxPil(String Pil);
+  
+    public List<PilCatPunt> verPilCatPutxPilYCat(String Pil, String Cat);
 }

@@ -308,6 +308,11 @@ public class Controller {
       
      @Autowired
       IPilCatPuntService  pcpServ;
+     
+      @Autowired
+    PilCatPuntRepository PCPR;
+      
+      
     @PostMapping ("/pilCatPunt")
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
     public void agregarPilCatPunt (@RequestBody PilCatPunt pilcatpunt){
@@ -323,6 +328,7 @@ public class Controller {
     
      return pcpServ.verPilCatPunt();
     }
+    
     @DeleteMapping ("/delete/pilCatPunt/{id}")
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
     public void borrarPilCatPunt(@PathVariable Long id){
@@ -333,13 +339,15 @@ public class Controller {
    @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
     public void modificarPilCatPunt(@RequestBody PilCatPunt pilcp){
         pcpServ.modifPilCatPunt(pilcp); }
-      @Autowired
-    PilCatPuntRepository PCPR;
+    
+    
+    
+     
      @GetMapping ("/ver/pilCatPuntXPiloto/{Pil}")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
     public List<PilCatPunt> verPilCatPuntX(@PathVariable String Pil){
-    return PCPR.findByNombrePilotoPilCatPunt(Pil);
+    return pcpServ.verPilCatPutxPil(Pil);
     
     
     }
