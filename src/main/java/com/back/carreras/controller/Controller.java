@@ -346,11 +346,15 @@ public class Controller {
      @GetMapping ("/ver/pilCatPuntXPiloto/{Pil}")
     @ResponseBody
     @CrossOrigin(origins={"http://localhost:4200","https://ranking-backoffice.web.app", "https://carreras-app-aoh3.vercel.app/"} )
-    public List<PilCatPunt> verPilCatPuntX(@PathVariable String Pil){
+    public List<PilCatPunt> verPilCatPuntX(@PathVariable("Pil") String Pil){
     return pcpServ.verPilCatPutxPil(Pil);
     
     
     }
+    
+   
+    
+    
     
      @GetMapping ("/ver/pcpOrdenadoXCat/{Cat}")
     @ResponseBody
