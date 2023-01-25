@@ -340,7 +340,7 @@ public class Controller {
     public List<PilCatPunt> verPilCatPuntX(@PathVariable String Pil){
     
     
-     return pcpServ.verPilCatPutxPil(Pil);
+    return pcpServ.verPilCatPutxPil(Pil);
     }
     
      @GetMapping ("/ver/pcpOrdenadoXCat/{Cat}")
